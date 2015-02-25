@@ -2,4 +2,4 @@
 Sample Apps for AdventureWokrs Harvester
 
 ### Displaying Informations
-Apps can only display collected informations so we start at step 2
+The Apps displays expanded informations like the collected informtions
