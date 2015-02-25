@@ -1,0 +1,29 @@
+{
+    "id": "companies",
+    "name": "Companies",
+    "version": "0.0.1",
+    "core_version": "2.4.0.0",
+    "manifest_version": 2,
+    
+
+    "angular": {
+        "models": [ "Company" ],
+
+        "views": {
+            "cube": "",
+            "board": "",
+            "detail": "companies-details.html",
+            "listitem": "",
+            "timelineitem": ""
+        },
+    },
+
+    "icons": {
+        "tileImage": "companies_tile.png"
+    },    
+
+    "dependencies": {
+        "css": [ "companies.css" ],
+        "js": [	"companies-details-ctrl.js", ]
+    }  
+}

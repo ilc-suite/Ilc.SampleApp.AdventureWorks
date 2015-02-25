@@ -1,0 +1,23 @@
+<div class="detailsfullwidth detailsfullheight" ng-controller="companiesDetailsCtrl">
+    <div class="detailscontent">
+        <div class="detailsheader">
+            <span ng-show="item.Value.Name">{{item.Value.Name}}</span>
+        </div>
+
+        <div class="detailsdescription">            
+            <div ng-repeat="address in item.Value.Addresses">
+                <div ng-show="address.Address">{{address.Address}}</div>
+                <div ng-show="address.Zip">{{address.Zip}}</div>
+                <div ng-show="address.City">{{address.City}}</div>
+                <div ng-show="address.Country">{{address.Country}}</div>
+            </div>
+        </div>
+
+        <div class="detailsdescription">
+            <!--$scope.common.openLink(url) opens the given url in a new window-->
+            <button class="open-map" ng-click="common.openLink(model.getGoogleMapsUrl())">
+                <span class="glyphicon glyphicon-map-marker"></span> {{ 'COMPANIES.OPENMAP' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

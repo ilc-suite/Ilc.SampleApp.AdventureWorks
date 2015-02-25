@@ -1,0 +1,29 @@
+{
+    "id": "contacts",
+    "name": "Contacts",
+    "version": "0.0.1",
+    "core_version": "2.4.0.0",
+    "manifest_version": 2,
+    
+
+    "angular": {
+        "models": [ "ContactPerson" ],
+
+        "views": {
+            "cube": "",
+            "board": "",
+            "detail": "contacts-details.html",
+            "listitem": "",
+            "timelineitem": ""
+        },
+    },
+
+    "icons": {
+        "tileImage": "contacts_tile.png"
+    },    
+
+    "dependencies": {
+        "css": [ "contacts.css" ],
+        "js": []
+    }  
+}
