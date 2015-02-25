@@ -1,0 +1,37 @@
+<div class="detailsfullwidth detailsfullheight" ng-controller="productsDetailsCtrl">
+    <div class="detailscontent">
+        <div class="detailsheader">
+            <span ng-show="item.Value.Name">{{item.Value.Name}}</span>
+        </div>
+
+        <div class="detailsdescription">
+            
+            <!--ilcCollapsiblePanel displays a ilc-styled collapsibel panel.
+                Attributes: header: sets the panel header
+                            collapsed: indicated weather the panel ist collapsed at the beginning. Default: false-->
+            <ilc-collapsible-panel header="{{'PRODUCTS.DETAIL' | translate}}">
+                <ul>
+                    <li ng-if="item.Value.Articlenumber" ng-cloak>{{'PRODUCTS.ARTICLENR' | translate}}: {{item.Value.Articlenumber}}</li>
+                    <li ng-if="item.Value.Color" ng-cloak>{{'PRODUCTS.COLOR' | translate}}: {{item.Value.Color}}</li>
+                    <li ng-if="item.Value.StandardCost" ng-cloak>{{'PRODUCTS.STANDARDCOST' | translate}}: {{item.Value.StandardCost}}</li>
+                    <li ng-if="item.Value.ListPrice" ng-cloak>{{'PRODUCTS.LISTPRICE' | translate}}: {{item.Value.ListPrice}}</li>
+                    <li ng-if="item.Value.Size" ng-cloak>{{'PRODUCTS.SIZE' | translate}}: {{item.Value.Size}} {{item.Value.SizeMeasure}}</li>
+                    <li ng-if="item.Value.Weight" ng-cloak>{{'PRODUCTS.WEIGHT' | translate}}: {{item.Value.Weight}} {{item.Value.WeightMeasure}}</li>
+                    <!-- $scope.common.formatDate(isoDateString, format) formats an ISO8601 date string depending on the provided format an the selected language
+                        The function works with moment.js format() function. For possible format strings see http://momentjs.com/docs/#/displaying/ . Default value: 'll'-->
+                    <li ng-if="item.Value.InstallationDate" ng-cloak>{{'PRODUCTS.SELLSTARTDAY' | translate}}: {{common.formatDate(item.Value.InstallationDate, 'll')}}</li>
+                    <li ng-if="item.Value.SellEndDate" ng-cloak>{{'PRODUCTS.SELLENDDATE' | translate}}: {{common.formatDate(item.Value.SellEndDate, 'll')}}</li>
+                </ul>
+            </ilc-collapsible-panel>
+            
+        </div>
+
+        <!-- ilcSpinner directive displays a spinning icon if attribute show is truthy-->
+        <ilc-spinner show="model.loadingPhoto"></ilc-spinner>
+        <div ng-if="item.Value.ProductPhoto && !model.loadingPhoto" class="detailsdescription product-photo animate-if">            
+            <img ng-src="{{item.Value.ProductPhoto.ImgSrcString}}" />
+        </div>
+
+
+    </div>
+</div>

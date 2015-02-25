@@ -1,0 +1,40 @@
+<div class="itemfullheight itemfullwidth" ng-controller="productsBoardCtrl">
+    <div class="ng-hide itemgroup anim-slide-rtol" ng-show="!model.isAjaxInProgress">
+        <div class="input-group">
+            <input class="itemfiltertextbox" type="search" ng-model="query" placeholder="Filter" />
+
+            <!--custom dropdown button to order list items-->
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-orderby dropdown-toggle" data-toggle="dropdown">
+                    <span>{{'PRODUCTS.ORDERBY' | translate }}</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a data-ng-click="model.orderBy = 'Value.Name';">
+                        {{'PRODUCTS.NAME' | translate}} <span ng-show="model.orderBy == 'Value.Name';" class="glyphicon glyphicon-ok"></span>
+                    </a></li>
+                    <li><a data-ng-click="model.orderBy = 'Value.InstallationDate'">
+                        {{'PRODUCTS.DATE' | translate}} <span ng-show="model.orderBy == 'Value.InstallationDate';" class="glyphicon glyphicon-ok"></span>
+                    </a></li>
+                    <li><a data-ng-click="model.orderBy = 'Value.Id'">
+                        {{'PRODUCTS.PRODUCTNR' | translate}} <span ng-show="model.orderBy == 'Value.Id';" class="glyphicon glyphicon-ok"></span>
+                    </a></li>
+                </ul>
+            </div>
+            <!--custom button to order list items-->
+        </div>
+
+        <div class="itemgroupnext" stretch-vertical="-5" infinite-scroll="model.loadMore()" infinite-scroll-can-load="model.canLoad" infinite-scroll-threshold="'100'">
+            <!--the list items are ordered by the angular 'orderBy' filter-->
+            <div class="itemfullwidth" ng-repeat="item in model.items | orderBy: model.orderBy: false | filterWithBacklog:query:model.itemsBacklog track by item.Id">
+                
+                <div class="listitem itemclickable" calculate-item-height ng-click="common.showDetails(item); model.selectedIndex = $index; " ng-class="{'itemselected': model.selectedIndex === $index}">
+                    <div class="itemtext">
+                        <div class="itemheader">{{item.Header}}</div>
+                        <div class="itemdescription">{{item.Article}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

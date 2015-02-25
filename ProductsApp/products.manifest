@@ -1,0 +1,30 @@
+{
+    "id": "products",
+    "name": "Products",
+    "version": "0.0.1",
+    "core_version": "2.4.0.0",
+    "manifest_version": 2,
+    
+
+    "angular": {
+        "models": [ "BikeProduct" ],
+
+        "views": {
+            "cube": "cube-template.html",
+            "board": "products-board.html",
+            "detail": "products-details.html",
+            "listitem": "",
+            "timelineitem": ""
+        },
+    },
+
+    "icons": {
+        "tileImage": ""
+    },    
+
+    "dependencies": {
+        "css": [ "products.css" ],
+        "js": [ "products-board-ctrl.js",
+				"products-details-ctrl.js", ]
+    }  
+}

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B8A2CF70-F99A-4C43-85F9-74CA7EB1E294}</ProjectGuid>
+    <ProjectGuid>{34E96E65-31BE-428B-8FA4-791A91906F9D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CompaniesApp</RootNamespace>
-    <AssemblyName>CompaniesApp</AssemblyName>
+    <RootNamespace>ProductsApp</RootNamespace>
+    <AssemblyName>ProductsApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -60,15 +60,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="companies-details-ctrl.js" />
-    <Content Include="companies-details.html" />
-    <Content Include="companies.css">
-      <DependentUpon>companies.less</DependentUpon>
+    <Content Include="products.css">
+      <DependentUpon>products.less</DependentUpon>
     </Content>
-    <Content Include="companies.min.css">
-      <DependentUpon>companies.less</DependentUpon>
+    <Content Include="products.min.css">
+      <DependentUpon>products.less</DependentUpon>
     </Content>
-    <Content Include="companies_tile.png" />
+    <Content Include="products-board-ctrl.js" />
+    <Content Include="products-board.html" />
+    <Content Include="products-details-ctrl.js" />
+    <Content Include="products-details.html" />
     <Content Include="cube-template.html" />
     <Content Include="Readme.txt" />
     <Content Include="Web.config" />
@@ -76,10 +77,16 @@
   <ItemGroup>
     <Content Include="lang\en.json" />
     <Content Include="lang\de.json" />
-    <Content Include="companies.manifest" />
-    <Content Include="companies.less" />
+    <Content Include="products.manifest" />
+    <Content Include="products.less" />
     <Content Include="packages.config" />
-    <Content Include="TestData\companies.json" />
+    <Content Include="TestData\products.json" />
+    <Content Include="TestData\details_awc_tee_male_yellow_large.json" />
+    <Content Include="TestData\details_large_wheel.json" />
+    <Content Include="TestData\details_no_image.json" />
+    <Content Include="TestData\details_roadster_red_large.json" />
+    <Content Include="TestData\details_shorts_female.json" />
+    <Content Include="TestData\details_water_bottle.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -103,7 +110,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50255</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56335/</IISUrl>
+          <IISUrl>http://localhost:56339/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

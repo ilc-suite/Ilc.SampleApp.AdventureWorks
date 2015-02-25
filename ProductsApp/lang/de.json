@@ -1,0 +1,18 @@
+{
+	"PRODUCTS" : {		
+		"APPNAME": "Produkte",
+		"DETAIL": "Produktinformationen",
+		"ARTICLENR": "Artikelnummer",
+		"COLOR": "Farbe",
+		"STANDARDCOST": "Standard Kosten",
+		"LISTPRICE": "Listenpreis",
+		"SIZE": "Groesse",
+		"WEIGHT": "Gewicht",
+		"SELLSTARTDAY": "Beginn des Verkaufs",
+		"SELLENDDATE": "Ende des Verkaufs",
+		"ORDERBY": "Sortieren nach",
+		"NAME": "Name",
+		"DATE": "Datum",
+		"PRODUCTNR": "Produktnummer"
+	}	
+}

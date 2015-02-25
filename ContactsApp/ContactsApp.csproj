@@ -74,12 +74,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="contacts.manifest" />
-    <Content Include="packages.config" />
-    <Content Include="contacts.less" />
-    <Content Include="lang\de.json" />
     <Content Include="lang\en.json" />
-    <Content Include="TestData\contacts-changed.json" />
+    <Content Include="lang\de.json" />
+    <Content Include="contacts.manifest" />
+    <Content Include="contacts.less" />
+    <Content Include="packages.config" />
     <Content Include="TestData\contacts.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -104,7 +103,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50255</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51735/</IISUrl>
+          <IISUrl>http://localhost:56298/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
