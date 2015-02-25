@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AEED1FEF-3E6E-4149-8AE4-C3DD2919A976}</ProjectGuid>
+    <ProjectGuid>{750CEA60-0307-4584-8FB2-DA41BACFD0DF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -69,6 +69,7 @@
       <DependentUpon>companies.less</DependentUpon>
     </Content>
     <Content Include="companies_tile.png" />
+    <Content Include="cube-template.html" />
     <Content Include="readme.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -102,7 +103,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50255</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50179/</IISUrl>
+          <IISUrl>http://localhost:55370/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

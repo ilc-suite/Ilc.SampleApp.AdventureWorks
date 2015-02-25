@@ -1,36 +1,44 @@
 <div class="detailsfullwidth detailsfullheight">
     <div class="detailscontent">
-        <div class="detailsheader">
-            <span ng-show="item.Value.Lastname">{{item.Value.Firstname}} {{item.Value.Lastname}}</span> 
-        </div>
+        <div class="detailsimage">
+            <!--$scope.common.tryGetImage128x128(pictureUrl) returns the given picture url, if it is set. 
+            Else returns an empty person silhouette with 128px width-->
+            <img src="{{common.tryGetImage128x128(item.Value.PictureUrl)}}" />
+         </div>
+        <div class="detailstextcontainer">
+            <div class="detailsheader">
+                <span ng-show="item.Value.Lastname">{{item.Value.Firstname}} {{item.Value.Lastname}}</span> 
+            </div>
 
-        <div class="detailsdescription">
-            <span ng-show="item.Value.JobTitle">{{item.Value.JobTitle}}</span>
-        </div>
+            <div class="detailsdescription">
+                <span ng-show="item.Value.JobTitle">{{item.Value.JobTitle}}</span>
+            </div>
 
-        <div class="detailsdescription">
-            <div class="contacts-details-item">
-                <div ng-repeat="e in item.Value.EMails">
-                    <div class="item-header">
-                        Email:
+            <div class="detailsdescription">
+                <div class="contacts-details-item">
+                    <div ng-repeat="e in item.Value.EMails">
+                        <div class="item-header">
+                            Email:
+                        </div>
+                        <div class="item-description">
+                            <a class="clickable" ng-click="$event.stopPropagation(); common.openMailTo(e)">{{e}}</a>
+                        </div>
                     </div>
-                    <div class="item-description">
-                        <a class="clickable" ng-click="$event.stopPropagation(); common.openMailTo(e)">{{e}}</a>
+                </div>
+                <div class="contacts-details-item">
+                    <div ng-show="item.Value.Address.Phone">
+                        <div class="item-header">
+                            <!--The translation service replaces the key with translations provided in the language files-->
+                            {{ 'CONTACTS.PHONE' | translate }}: 
+                        </div>
+                        <div class="item-description">
+                            {{item.Value.Address.Phone}}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="contacts-details-item">
-                <div ng-show="item.Value.Address.Phone">
-                    <div class="item-header">
-                        <!--The translation service replaces the key with translations provided in the language files-->
-                        {{ 'CONTACTS.PHONE' | translate }}: 
-                    </div>
-                    <div class="item-description">
-                        {{item.Value.Address.Phone}}
-                    </div>
-                </div>
-            </div>
         </div>
+
     </div>
 </div>
 

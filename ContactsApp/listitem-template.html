@@ -1,0 +1,11 @@
+﻿<div class="itemfullwidth listitem itemclickable withimg" style="background-color: transparent;" calculate-item-height>
+    <div class="itemimg">
+        <!--$scope.common.tryGetImage32x32(pictureUrl) returns the given picture url, if it is set. 
+            Else returns an empty person silhouette with 32px width-->
+        <img ng-src="{{common.tryGetImage32x32(item.Value.PictureUrl)}}" />
+    </div>
+    <div class="itemtext">
+        <div class="itemheader">{{item.Header}}</div>
+        <div class="itemdescription">{{item.Article}}</div>
+    </div>
+</div>

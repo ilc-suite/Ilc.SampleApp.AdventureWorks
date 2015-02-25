@@ -10,7 +10,7 @@
         "models": [ "Company" ],
 
         "views": {
-            "cube": "",
+            "cube": "cube-template.html",
             "board": "",
             "detail": "companies-details.html",
             "listitem": "",

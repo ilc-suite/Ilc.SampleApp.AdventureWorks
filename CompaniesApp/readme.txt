@@ -4,4 +4,4 @@ A sample project to illustrate how to build your own app for ILC
 
 ### In this Scenario
 
-The app illustrates how to build a custom detail view with a custom detail controller.
+Project extends Step2 with a custom cube template to add a hover effect and translate the app name

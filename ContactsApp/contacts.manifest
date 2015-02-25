@@ -13,8 +13,8 @@
             "cube": "",
             "board": "",
             "detail": "contacts-details.html",
-            "listitem": "",
-            "timelineitem": ""
+            "listitem": "listitem-template.html",
+            "timelineitem": "timeline-template.html"
         },
     },
 

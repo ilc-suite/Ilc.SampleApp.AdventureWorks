@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ilc.SampleApp.AdventureWorks</RootNamespace>
-    <AssemblyName>Ilc.SampleApp.AdventureWorks</AssemblyName>
+    <RootNamespace>ContactsApp</RootNamespace>
+    <AssemblyName>ContactsApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -68,15 +68,18 @@
       <DependentUpon>contacts.less</DependentUpon>
     </Content>
     <Content Include="contacts_tile.png" />
+    <Content Include="listitem-template.html" />
     <Content Include="Readme.txt" />
+    <Content Include="timeline-template.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lang\en.json" />
-    <Content Include="lang\de.json" />
     <Content Include="contacts.manifest" />
-    <Content Include="contacts.less" />
     <Content Include="packages.config" />
+    <Content Include="contacts.less" />
+    <Content Include="lang\de.json" />
+    <Content Include="lang\en.json" />
+    <Content Include="TestData\contacts-changed.json" />
     <Content Include="TestData\contacts.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -101,7 +104,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50255</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49600/</IISUrl>
+          <IISUrl>http://localhost:51735/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

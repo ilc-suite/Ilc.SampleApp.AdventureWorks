@@ -1,0 +1,16 @@
+﻿<div class="squarebox clickable tile" ng-class="{'tile-with-data': items.length > 0 }">
+    <div class="squareboxcontent">
+        <div class="tilecounter">
+            <span>{{items.length}}</span>                                            
+        </div>
+        <div class="tilecontent">
+            <div class="tilecell">
+                <div class="tilecontainer clickable">
+                    <!--custom css class "dynamic-tile-image" adds a hover effect to the tile image-->
+                    <img class="dynamic-tile-image" src="{{app.TileImage}}" />
+                    <div class="tiletitle clickable">{{ 'COMPANIES.APPNAME' | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
