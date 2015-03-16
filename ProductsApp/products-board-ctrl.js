@@ -1,4 +1,5 @@
-ilc.web.inheritController('productsBoardCtrl', ['$scope', '$sessionStorage', '$filter', function ($scope, $sessionStorage, $filter) {
+ilc.web.inheritController('productsBoardCtrl', ['$scope', '$sessionStorage', '$filter', '$timeout', 
+function ($scope, $sessionStorage, $filter, $timeout) {
     $scope.model = {
         instanceId: $scope.instanceId,
         items: [],
@@ -6,6 +7,8 @@ ilc.web.inheritController('productsBoardCtrl', ['$scope', '$sessionStorage', '$f
         canLoad: false,
         isAjaxInProgress: true,
         selectedIndex: -1,
+        timeoutIsSet: false,
+        getSelectedIndex: false,
 
         //sets the default property the list items are ordered by
         orderBy: 'Value.Name',
@@ -33,15 +36,23 @@ ilc.web.inheritController('productsBoardCtrl', ['$scope', '$sessionStorage', '$f
             //The latest selected detail item is stored in $sessionStorage to select this item again after a reset
             if ($sessionStorage.selectedDetailsItem && $sessionStorage.selectedDetailsItem.ValueId === data.ValueId) {
                 //show stored item in detail view
-                $scope.common.showDetails(data);
+                $scope.common.selectItemOnce(data);
+                $scope.model.getSelectedIndex = true;
             }
 
+            if (!$sessionStorage.selectedDetailsItem && !$scope.model.timeoutIsSet){
+                $scope.model.timeoutIsSet = true;
+                $timeout($scope.selectFirstItem, 300);
+            }
+            
             if($scope.model.items.length < 30)
                 $scope.model.items.push(data);
-            else
+            else{
                 $scope.model.itemsBacklog.push(data);
+                $scope.model.getSelectedIndex = false;
+            }
 
-            if ($sessionStorage.selectedDetailsItem && $scope.model.itemsBacklog.length === 0) {
+            if ($scope.model.getSelectedIndex) {
                 //Get the index of stored detail item in sorted items list
                 $scope.model.selectedIndex = _.findIndex($filter('orderBy')($scope.model.items, $scope.model.orderBy, false),
                     function (item) { return item.ValueId === $sessionStorage.selectedDetailsItem.ValueId; })
@@ -51,6 +62,14 @@ ilc.web.inheritController('productsBoardCtrl', ['$scope', '$sessionStorage', '$f
         });
     });
 
+    $scope.selectFirstItem = function(){
+        if ($scope.model.items.length != 0){
+            var firstItem = ($filter('orderBy')($scope.model.items, $scope.model.orderBy, false))[0];
+            $scope.common.showDetails(firstItem);
+            $scope.model.selectedIndex = 0;
+        }
+    };
+    
     $scope.ilc.onChangedInformation(function (data) {
         //This function is called when existing informations have been changed (i.e. the information have been expanded by another harvester)
         ilc.web.apply($scope, function () {
@@ -77,9 +96,13 @@ ilc.web.inheritController('productsBoardCtrl', ['$scope', '$sessionStorage', '$f
         ilc.web.apply($scope, function () {
             $scope.model.items = [];
             $scope.model.itemsBacklog = [];
+            $scope.model.canLoad = false;
             $scope.model.detailItem = undefined;
-            $scope.model.selectedIndex = undefined;
+            $scope.model.selectedIndex = -1;
             $scope.model.isAjaxInProgress = false;
+            $scope.model.getSelectedIndex = false;
+            $scope.model.timeoutIsSet = false;
+            $scope.common.selectItemOnce();
         });
     });
 }]);
