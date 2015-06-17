@@ -1,4 +1,4 @@
-ilc.web.controller('companiesDetailsCtrl', ['$scope', function ($scope) {
+ilc.web.controller('COM-ILC-TECHNOLOGIES-COMPANIES_companiesDetailsCtrl', ['$scope', function ($scope) {
     $scope.model = {
         getGoogleMapsUrl : function() {
             var url = 'http://maps.google.com/maps?q=';

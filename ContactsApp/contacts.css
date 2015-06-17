@@ -1,11 +1,11 @@
-.contacts-details-item {
+.COM-ILC-TECHNOLOGIES-CONTACTS .contacts-details-item {
   margin-top: 10px;
   clear: both;
 }
-.contacts-details-item .item-header {
+.COM-ILC-TECHNOLOGIES-CONTACTS .contacts-details-item .item-header {
   float: left;
   width: 60px;
 }
-.contacts-details-item .item-description {
+.COM-ILC-TECHNOLOGIES-CONTACTS .contacts-details-item .item-description {
   float: left;
 }
