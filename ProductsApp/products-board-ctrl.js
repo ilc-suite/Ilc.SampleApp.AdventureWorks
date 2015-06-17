@@ -1,32 +1,25 @@
-ilc.web.inheritController('productsBoardCtrl', ['$scope', '$sessionStorage', '$filter', '$timeout', 
+ilc.web.inheritController('COM-ILC-TECHNOLOGIES-PRODUCTS_productsBoardCtrl', ['$scope', '$sessionStorage', '$filter', '$timeout',
 function ($scope, $sessionStorage, $filter, $timeout) {
     $scope.model = {
         instanceId: $scope.instanceId,
         items: [],
-        itemsBacklog: [],
         canLoad: false,
         isAjaxInProgress: true,
         selectedIndex: -1,
         timeoutIsSet: false,
         getSelectedIndex: false,
+        itemLimit: 30,
 
         //sets the default property the list items are ordered by
         orderBy: 'Value.Name',
 
         loadMore: function () {
-            if ($scope.model.itemsBacklog.length > 0) {
-                var max = 30;
-                max = $scope.model.itemsBacklog.length > max ? max : $scope.model.itemsBacklog.length;
-                for (var i = 0; i < max; i++) {
-                    $scope.model.items.push($scope.model.itemsBacklog[i]);
-                }
-                $scope.model.itemsBacklog.splice(0, max);
-                $scope.model.calcLoad();
-            }
+            $scope.model.itemLimit += 30;
+            $scope.model.calcLoad();
         },
 
         calcLoad: function () {
-            $scope.model.canLoad = ($scope.model.itemsBacklog.length > 0);
+            $scope.model.canLoad = ($scope.model.itemLimit < $scope.model.items.length);
         },
     };
 
@@ -45,12 +38,7 @@ function ($scope, $sessionStorage, $filter, $timeout) {
                 $timeout($scope.selectFirstItem, 300);
             }
             
-            if($scope.model.items.length < 30)
-                $scope.model.items.push(data);
-            else{
-                $scope.model.itemsBacklog.push(data);
-                $scope.model.getSelectedIndex = false;
-            }
+            $scope.model.items.push(data);
 
             if ($scope.model.getSelectedIndex) {
                 //Get the index of stored detail item in sorted items list
@@ -73,10 +61,8 @@ function ($scope, $sessionStorage, $filter, $timeout) {
     $scope.ilc.onChangedInformation(function (data) {
         //This function is called when existing informations have been changed (i.e. the information have been expanded by another harvester)
         ilc.web.apply($scope, function () {
-            var item = _.find($scope.model.itemsBacklog, function (x) { return x.Id === data.Id; });
-            if (typeof item === "undefined") {
-                item = _.find($scope.model.items, function (x) { return x.Id === data.Id; });
-            }
+            var item = _.find($scope.model.items, function (x) { return x.Id === data.Id; });
+
             if (typeof item === "undefined") {
                 return;
             }
@@ -95,7 +81,6 @@ function ($scope, $sessionStorage, $filter, $timeout) {
     $scope.ilc.onResetInformations(function () {
         ilc.web.apply($scope, function () {
             $scope.model.items = [];
-            $scope.model.itemsBacklog = [];
             $scope.model.canLoad = false;
             $scope.model.detailItem = undefined;
             $scope.model.selectedIndex = -1;

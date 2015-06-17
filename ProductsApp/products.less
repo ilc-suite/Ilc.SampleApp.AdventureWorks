@@ -1,29 +1,33 @@
-﻿@ilc-color: #55C3ED;
+﻿.COM-ILC-TECHNOLOGIES-PRODUCTS {
 
-.product-photo{
-    padding:30px 0px;
-    text-align: center;
-    img{
-        max-height:400px;
+    @ilc-color: #55C3ED;
+
+    .product-photo {
+        padding: 30px 0px;
+        text-align: center;
+
+        img {
+            max-height: 400px;
+        }
     }
-}
-.btn-orderby{
-    height: 25px;
-    padding: 1px 10px;
-    margin-top: 5px;
-    background-image: none;
-    background: @ilc-color;
-    -moz-border-radius:0;
-    -webkit-border-radius:0;
-    border-radius: 0;
-    color: white;
-    text-shadow: none;
 
-    &:hover, &:focus{
-        background: lighten(@ilc-color, 7%);
-        color:white;
+    .btn-orderby {
+        height: 25px;
+        padding: 1px 10px;
+        margin-top: 5px;
+        background-image: none;
+        background: @ilc-color;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        color: white;
         text-shadow: none;
-        border-color:#ccc;
-    }
 
+        &:hover, &:focus {
+            background: lighten(@ilc-color, 7%);
+            color: white;
+            text-shadow: none;
+            border-color: #ccc;
+        }
+    }
 }

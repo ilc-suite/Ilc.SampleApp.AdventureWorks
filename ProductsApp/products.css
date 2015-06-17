@@ -1,11 +1,11 @@
-.product-photo {
+.COM-ILC-TECHNOLOGIES-PRODUCTS .product-photo {
   padding: 30px 0px;
   text-align: center;
 }
-.product-photo img {
+.COM-ILC-TECHNOLOGIES-PRODUCTS .product-photo img {
   max-height: 400px;
 }
-.btn-orderby {
+.COM-ILC-TECHNOLOGIES-PRODUCTS .btn-orderby {
   height: 25px;
   padding: 1px 10px;
   margin-top: 5px;
@@ -17,8 +17,8 @@
   color: white;
   text-shadow: none;
 }
-.btn-orderby:hover,
-.btn-orderby:focus {
+.COM-ILC-TECHNOLOGIES-PRODUCTS .btn-orderby:hover,
+.COM-ILC-TECHNOLOGIES-PRODUCTS .btn-orderby:focus {
   background: #75cef0;
   color: white;
   text-shadow: none;

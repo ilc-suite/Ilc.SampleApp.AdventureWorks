@@ -1,4 +1,4 @@
-ilc.web.controller('productsDetailsCtrl', ['$scope', function ($scope) {
+ilc.web.controller('COM-ILC-TECHNOLOGIES-PRODUCTS_productsDetailsCtrl', ['$scope', function ($scope) {
     $scope.model = {
         loadingPhoto: false,
     };

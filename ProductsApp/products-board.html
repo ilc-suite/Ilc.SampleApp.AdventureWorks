@@ -1,4 +1,4 @@
-<div class="itemfullheight itemfullwidth" ng-controller="productsBoardCtrl">
+<div class="COM-ILC-TECHNOLOGIES-PRODUCTS itemfullheight itemfullwidth" ng-controller="COM-ILC-TECHNOLOGIES-PRODUCTS_productsBoardCtrl">
     <div class="ng-hide itemgroup anim-slide-rtol" ng-show="!model.isAjaxInProgress">
         <div class="input-group">
             <input class="itemfiltertextbox" type="search" ng-model="query" placeholder="Filter" />
@@ -26,9 +26,9 @@
 
         <div class="itemgroupnext" stretch-vertical="-5" infinite-scroll="model.loadMore()" infinite-scroll-can-load="model.canLoad" infinite-scroll-threshold="'100'">
             <!--the list items are ordered by the angular 'orderBy' filter-->
-            <div class="itemfullwidth" ng-repeat="item in model.items | orderBy: model.orderBy: false | filterWithBacklog:query:model.itemsBacklog track by item.Id">
+            <div class="itemfullwidth" ng-repeat="item in model.items | orderBy: model.orderBy: false | limitTo: model.itemLimit track by item.Id">
                 
-                <div class="listitem itemclickable" calculate-item-height ng-click="common.showDetails(item); model.selectedIndex = $index; " ng-class="{'itemselected': model.selectedIndex === $index}">
+                <div class="listitem itemclickable" ng-click="common.showDetails(item); model.selectedIndex = $index; " ng-class="{'itemselected': model.selectedIndex === $index}">
                     <div class="itemtext">
                         <div class="itemheader">{{item.Header}}</div>
                         <div class="itemdescription">{{item.Article}}</div>
