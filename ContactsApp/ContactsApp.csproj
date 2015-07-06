@@ -76,7 +76,6 @@
     <Content Include="lang\de.json" />
     <Content Include="contacts.manifest" />
     <Content Include="contacts.less" />
-    <Content Include="packages.config" />
     <Content Include="TestData\contacts.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

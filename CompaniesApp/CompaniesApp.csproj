@@ -77,7 +77,6 @@
     <Content Include="lang\de.json" />
     <Content Include="companies.manifest" />
     <Content Include="companies.less" />
-    <Content Include="packages.config" />
     <Content Include="TestData\companies.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
