@@ -1,10 +1,22 @@
 {
-    "id": "COM-ILC-TECHNOLOGIES-CONTACTS",
+    "id": "com-ilc-technologies-contacts",
     "name": "Contacts",
     "version": "0.0.1",
     "core_version": "2.4.0.0",
-    "manifest_version": 2,
-    
+    "manifest_version": 3,
+
+    "product": "ILC Company App",
+    "description": "This app displays company information",
+    "company": "ILC Technologies GmbH",
+    "copyright": "Copyright ©  2015",
+    "email": "info@ilc-technologies.com",
+    "homepage": "http://ilc-suite.de",
+    "address": {
+        "address_line1": "Am Essigberg 3",
+        "address_line2": "",
+        "postal_code": "94315",
+        "city": "Straubing"
+    },    
 
     "angular": {
         "models": [ "ContactPerson" ],
@@ -18,9 +30,14 @@
         },
     },
 
-    "icons": {
-        "tileImage": "contacts_tile.png"
-    },    
+	"icons": {
+        "tileImage": "contacts_tile.png",
+        "appIcon16": "",
+        "appIcon24": "",
+        "appIcon32": "",
+        "appIcon48": "",
+        "appIcon128": ""
+    },
 
     "dependencies": {
         "css": [ "contacts.css" ],
