@@ -10,6 +10,3 @@ The Apps displays expanded informations like the collected informtions
 
 ### [Step 4] (https://github.com/ilc-suite/Ilc.SampleApp.AdventureWorks/tree/4-CollectDetails-Display) CollectDetails 
 The ProductsApp uses CollectDetails ActionLink to display product pictures
-
-### [Step 6] (https://github.com/ilc-suite/Ilc.SampleApp.AdventureWorks/tree/6-Documents-Display) Documents
-The DocumentsApp uses the document viewer to display documents
